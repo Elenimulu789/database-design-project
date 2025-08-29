@@ -1,5 +1,35 @@
-# database-design-project
+# Book Tracker Database
 
-# Book Tracker Database Design
+## 📌 Overview
+This project implements a **book tracking system** in MySQL.  
+The database models four core entities:  
+- **Genres** – categories of books  
+- **Books** – individual books with metadata  
+- **Reading Status** – tracks whether a book is *Read*, *Currently Reading*, or *Want to Read*  
+- **Reviews** – user ratings and written feedback  
 
-This database models a book tracking system with four core entities: genres, books, reading statuses, and reviews. Each table has a primary key to uniquely identify records, and foreign keys establish relationships — such as books linked to genres, and reading statuses/reviews tied to books. The design uses normalized tables to avoid redundancy, with constraints to ensure data integrity (e.g., ENUM for reading status, checks on ratings). The EER diagram visually shows these connections and cardinalities. Challenges included balancing realistic data variety and maintaining referential integrity in sample data. The dataset was generated with realistic values to support testing and future scalability. This structure supports tracking personal reading habits and gathering user feedback efficiently.
+The design uses **normalized tables** to avoid redundancy, with constraints for data integrity (e.g., `ENUM` for status, `CHECK` for rating range). The EER diagram visually shows the connections and cardinalities.
+
+---
+
+## Files in this Repo
+- `EER_Diagram_books.mwb` → MySQL Workbench EER diagram  
+- `book_tracker_schema.sql` → Creates database + tables + constraints  
+- `sample_data.sql` → Inserts sample data (genres, books, statuses, reviews)  
+- `views.sql` → Defines useful views for common lookups  
+- `indexes.sql` → Creates indexes for performance  
+- `sample_queries.sql` → Example queries to validate design  
+- `book_tracker_data_full.xlsx` → Spreadsheet version of dataset  
+- `README.md` → Project summary and instructions  
+
+---
+
+## How to Run
+In MySQL Workbench or CLI, run scripts in this order:
+
+```sql
+SOURCE book_tracker_schema.sql;
+SOURCE sample_data.sql;
+SOURCE views.sql;
+SOURCE indexes.sql;
+SOURCE sample_queries.sql; -- optional (for demos)
