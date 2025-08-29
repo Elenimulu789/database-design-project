@@ -1,6 +1,6 @@
 # Book Tracker Database
 
-## 📌 Overview
+## Overview
 This project implements a **book tracking system** in MySQL.  
 The database models four core entities:  
 - **Genres** – categories of books  
